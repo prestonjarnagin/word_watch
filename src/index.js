@@ -21,6 +21,7 @@ function breakDown(){
   })
   .then(response => {
     console.log('Success')
+    getTopWord();
   })
   })
 
@@ -37,6 +38,9 @@ function getTopWord(){
   .then((data) => {
     let topWord = Object.keys(data.word)[0];
     let wordCount = data.word[topWord];
+
+    $('#top-word-display').empty();
+    $('#top-word-count-display').empty();
     $('#top-word-display').append(topWord);
     $('#top-word-count-display').append(wordCount);
   })
