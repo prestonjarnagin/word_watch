@@ -2,7 +2,7 @@ import $ from 'jquery'
 
 $(document).ready(() => {
   let break_down = document.getElementById('breakdown-button')
-  break_down.addEventListener('click', breakDown, false)
+  break_down.addEventListener('click', breakDown, true)
 })
 
 document.addEventListener("DOMContentLoaded", getTopWord);
@@ -20,6 +20,7 @@ function breakDown(){
     body: JSON.stringify(body)
   })
   .then(response => {
+    console.log('Success')
   })
   })
 
