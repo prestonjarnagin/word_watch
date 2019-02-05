@@ -9,7 +9,19 @@ document.addEventListener("DOMContentLoaded", getTopWord);
 
 
 function breakDown(){
-
+  let text = $('#text-input').val().split(" ")
+  text.forEach(element =>{
+    let body = { "word": { "value": element } }
+    fetch(`https://wordwatch-api.herokuapp.com/api/v1/words/`, {
+      method: 'POST',
+      headers:{'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(body)
+  })
+  .then(response => {
+  })
+  })
 
 }
 
